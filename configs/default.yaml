@@ -1,0 +1,68 @@
+ingestion:
+  input_format: csv
+  timestamp_col: timestamp
+  src_col: src_ip
+  dst_col: dst_ip
+  bytes_col: bytes
+  protocol_col: protocol
+
+windowing:
+  window_size_sec: 300
+  step_size_sec: 60
+  min_edges: 10
+
+graph:
+  edge_weight: bytes
+
+features:
+  node:
+    - degree
+    - betweenness
+    - clustering
+  community:
+    n_runs: 10
+    nmi_threshold: 0.7
+  path:
+    min_nodes: 10
+    min_density: 0.01
+  histogram_bins: 50
+
+drift:
+  primary: wasserstein
+  measures:
+    - wasserstein
+    - kl
+    - js
+
+fusion:
+  model: logistic_regression
+  C: 1.0
+  max_iter: 1000
+  random_state: 42
+
+detection:
+  model: isolation_forest
+  contamination: 0.05
+  random_state: 42
+  lstm:
+    hidden_dim: 64
+    num_layers: 2
+    dropout: 0.3
+    sequence_len: 20
+    epochs: 50
+    batch_size: 32
+    lr: 0.001
+    patience: 10
+
+evaluation:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+
+output:
+  format: json
+  save_plots: true
+  results_dir: results
+  figures_dir: figures
+
+seed: 42
