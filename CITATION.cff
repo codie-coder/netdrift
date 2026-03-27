@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it."
+title: "NetDrift: Stability-Aware Multi-Scale Temporal Graph Drift Modeling for Network Anomaly Detection"
+authors:
+  - family-names: "k"
+    given-names: "Aditya"
+version: 1.0.0
+date-released: 2025-03-27
+url: "https://github.com/codie-coder/netdrift"
