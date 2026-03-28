@@ -1,0 +1,44 @@
+{
+  "dataset": "cicids2017",
+  "seed": 42,
+  "threshold": 0.05,
+  "metrics": {
+    "accuracy": 0.7583,
+    "precision": 0.7583,
+    "recall": 1.0,
+    "f1": 0.8626,
+    "auc": 0.7734
+  },
+  "ablation": {
+    "full_model": {
+      "f1": 0.8626,
+      "auc": 0.7135
+    },
+    "no_node_drift": {
+      "f1": 0.8626,
+      "auc": 0.4716
+    },
+    "no_community_drift": {
+      "f1": 0.8626,
+      "auc": 0.3172
+    },
+    "no_path_drift": {
+      "f1": 0.8626,
+      "auc": 0.6836
+    },
+    "node_only": {
+      "f1": 0.8626,
+      "auc": 0.2687
+    },
+    "community_only": {
+      "f1": 0.8626,
+      "auc": 0.4348
+    },
+    "path_only": {
+      "f1": 0.8626,
+      "auc": 0.5385
+    }
+  },
+  "n_windows": 120,
+  "n_anomalies": 6
+}
