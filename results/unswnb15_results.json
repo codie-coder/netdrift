@@ -1,0 +1,45 @@
+{
+  "dataset": "unswnb15",
+  "seed": 42,
+  "config": "configs/default.yaml",
+  "metrics": {
+    "accuracy": 0.8583,
+    "precision": 0.8333,
+    "recall": 0.2381,
+    "f1": 0.3704,
+    "auc": 0.5974
+  },
+  "ablation": {
+    "full_model": {
+      "f1": 0.3529,
+      "auc": 0.608
+    },
+    "no_node_drift": {
+      "f1": 0.3529,
+      "auc": 0.6027
+    },
+    "no_community_drift": {
+      "f1": 0.3871,
+      "auc": 0.5556
+    },
+    "no_path_drift": {
+      "f1": 0.0,
+      "auc": 0.5301
+    },
+    "node_only": {
+      "f1": 0.0,
+      "auc": 0.5565
+    },
+    "community_only": {
+      "f1": 0.0,
+      "auc": 0.6094
+    },
+    "path_only": {
+      "f1": 0.0,
+      "auc": 0.4233
+    }
+  },
+  "n_windows": 120,
+  "n_anomalies": 6,
+  "threshold": 0.3001171919527876
+}
